@@ -162,7 +162,7 @@ object DiscountCalculator extends App {
         preparedStatement.setDouble(6, order.unit_price)
         preparedStatement.setString(7, order.channel)
         preparedStatement.setString(8, order.payment_method)
-        preparedStatement.setDouble(9, discount)
+        preparedStatement.setDouble(9, discount * 100)
 
         // Calculate total due after discount
         val totalDue = order.unit_price - (order.unit_price * (discount / 100.0))
